@@ -1,0 +1,151 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+}
+
+html,
+body,
+#root{
+  height: 100%;
+  width: 100%;
+}
+
+html{
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.create-post-section{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: aliceblue;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.create-post-section input,
+.create-post-section textarea{
+  width: 300px;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid pink;
+  border-radius: 4px;
+}
+
+.submit-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  
+  padding: 0.875rem 1.75rem;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--btn-color);
+  
+  background: var(--btn-bg);
+  border: none;
+  border-radius: 12px;
+  box-shadow: var(--btn-shadow);
+  
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Hover State */
+.submit-btn:hover {
+  background: var(--btn-bg-hover);
+  box-shadow: var(--btn-shadow-hover);
+  transform: translateY(-2px);
+}
+
+.submit-btn:hover .icon {
+  transform: translateX(4px);
+}
+
+/* Click/Active State */
+.submit-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px 0 rgba(99, 102, 241, 0.39);
+}
+
+/* Keyboard Focus (Accessibility) */
+.submit-btn:focus-visible {
+  outline: 3px solid #a5b4fc;
+  outline-offset: 3px;
+}
+
+/* Arrow Icon Animation */
+.submit-btn .icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Disabled State */
+.submit-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+
+/* Container for the whole feed */
+.feed-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  max-width: 520px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+/* Individual post card */
+.post-card {
+  width: 100%;
+  background-color: #ffffff;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  overflow: hidden;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 
+              0 2px 4px -2px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.post-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 
+              0 4px 6px -4px rgba(0, 0, 0, 0.04);
+}
+
+/* Post Image */
+.post-card img {
+  width: 100%;
+  max-height: 500px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Caption Section */
+.post-card p {
+  padding: 0.875rem 1rem;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 0.95rem;
+  color: #1f2937;
+  line-height: 1.4;
+}
+
+/* Empty state message */
+.feed-section > p {
+  font-family: sans-serif;
+  color: #6b7280;
+  font-size: 1rem;
+  text-align: center;
+  margin-top: 2rem;
+}
